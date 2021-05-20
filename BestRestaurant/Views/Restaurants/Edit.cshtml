@@ -13,13 +13,13 @@
 
   @Html.LabelFor(model => model.Name, new {@class="form-label"})
   @Html.EditorFor(model => model.Name, new {@class = "form-control", type="text", id="name"})
-  @Html.LabelFor(model => model.Description, new {@class="form-label"})
+  @Html.LabelFor(model => model.Description, new {@class="ftorm-label"})
   @Html.EditorFor(model => model.Description, new {@class = "form-control", type="text"})
   @Html.LabelFor(model => model.Price, new {@class="form-label"})
-  @Html.EditorFor(model => model.Price, new {@class = "form-range", type="range", min="1", max="5", id="price"})
+  @Html.TextBoxFor(model => model.Price, new {@class = "custom-range", type="range", min="1", max="5", id="price"})
   @Html.LabelFor(model => model.Location, new {@class="form-label"})
   @Html.EditorFor(model => model.Location, new {@class = "form-control", type="text", id="location"})
-  @Html.LabelFor(model => model.Cuisine)
+  @Html.LabelFor(model => model.Cuisine, new {@class="form-label"})
   @Html.DropDownList("CuisineId")
 
   <input type="submit" value="Save Changes" class="btn btn-outline-warning" />

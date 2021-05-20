@@ -2,6 +2,7 @@
   Layout = "_Layout";
 }
 
+@using BestRestaurant.Models
 @model BestRestaurant.Models.Cuisine
 
 <h2>Cuisine Details:</h2>
@@ -11,3 +12,11 @@
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit cuisine", "Edit", new { id = Model.CuisineId })</p>
 <p>@Html.ActionLink("Delete cuisine", "Delete", new { id = Model.CuisineId })</p>
+
+@foreach (Restaurant restaurant in ViewBag.Restaurants)
+{
+  if (restaurant.CuisineId == Model.CuisineId)
+  {
+    <li>@Html.ActionLink($"{restaurant.Name}", $"Details/{restaurant.RestaurantId}", "Restaurants")</li>
+  }
+}

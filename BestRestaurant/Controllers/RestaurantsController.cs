@@ -23,7 +23,7 @@ namespace BestRestaurant.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name", new { @class = "custom-select" });
       return View();
     }
 
