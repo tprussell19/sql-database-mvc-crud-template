@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using BestRestaurant.Models;
+using ProjectName.Models;
 
 
-namespace BestRestaurant
+namespace ProjectName
 {
   public class Startup
   {
@@ -25,7 +25,7 @@ namespace BestRestaurant
     {
       services.AddMvc();
       services.AddEntityFrameworkMySql()
-        .AddDbContext<BestRestaurantContext>(options => options
+        .AddDbContext<ProjectNameContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 
