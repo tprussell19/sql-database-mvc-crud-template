@@ -17,6 +17,6 @@
 {
   if (restaurant.CuisineId == Model.CuisineId)
   {
-    <li>@Html.ActionLink($"{restaurant.Name}", $"Details/{restaurant.RestaurantId}", "Restaurants")</li>
+    <li>@Html.ActionLink($"{restaurant.Name}", "Details", "Restaurants", new { id = restaurant.RestaurantId})</li>
   }
 }
